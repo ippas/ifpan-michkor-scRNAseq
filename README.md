@@ -24,3 +24,31 @@ Directories:
 - data - useful data, created by scripts/tools/preprocessing
 - analysis - analysis source code
 - results - output ready to present
+
+Comand to prepare ref genome
+```
+split-pipe   \
+  --mode mkref   \
+--genome_name GRCh38   \
+--fasta data/ref_hg38/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz   \
+--genes data/ref_hg38/Homo_sapiens.GRCh38.113.chr.gtf.gz   \
+--nthreads 16   \
+--output_dir data/ref_hg38/GRCh38_ref
+
+```
+
+First trial
+```
+split-pipe \
+  --mode all \
+  --kit WT_mega \
+  --chemistry v2 \
+  -f raw/pilotDexCortCtrl/BG60BLUE_L6/BG60BLUE_MKDL250008382-1A_22VVLVLT4_L6_1.fq.gz \
+  --fq2 raw/pilotDexCortCtrl/BG60BLUE_L6/BG60BLUE_MKDL250008382-1A_22VVLVLT4_L6_2.fq.gz \
+  --nthreads 16 \
+  --output_dir data/pilotDexCortCtrl/BG60BLUE_L6-out \
+  --genome_dir data/ref_hg38/GRCh38_ref \
+  --sample all-well A1-H12 \
+  --chem_score_skip \
+  --kit_score_skip
+```
