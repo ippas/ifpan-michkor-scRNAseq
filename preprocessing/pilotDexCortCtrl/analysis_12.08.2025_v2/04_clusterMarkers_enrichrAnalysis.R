@@ -23,9 +23,9 @@ enrichr_databases  <- c(
   "CellMarker_2024",
   "CellMarker_Augmented_2021",
   "Human_Gene_Atlas",
-  "GO_Biological_Process_2025",
-  "GO_Cellular_Component_2025",
-  "Jensen_DISEASES_Experimental_2025"
+  "GO_Biological_Process_2025"
+  # "GO_Cellular_Component_2025",
+  # "Jensen_DISEASES_Experimental_2025"
 )
 
 # Output folder

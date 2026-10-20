@@ -4,8 +4,8 @@
 # ##############################################################################
 
 plot_umap_cluster_faceted(
-  merged_pilotDexCortCtrl,
-  cluster_var = "seurat_clusters_res0.5",
+  integrated_pilotDexCortCtrl,
+  cluster_var = "seurat_clusters_res0.13",
   plot_title = "UMAP Projection Across All Samplest",
   facet_var = NULL,
   # facet_order = c("CTRL", "DEX", "CORT"),
@@ -21,7 +21,7 @@ plot_umap_cluster_faceted(
 )
 
 plot_umap_cluster_faceted(
-  merged_pilotDexCortCtrl,
+  integrated_pilotDexCortCtrl,
   facet_var = "sublibrary",
   cluster_var = "seurat_clusters_res0.5",
   plot_title = "UMAP Projection by Sublibrary",
@@ -40,9 +40,9 @@ plot_umap_cluster_faceted(
 plot_umap_cluster_faceted(
   integrated_pilotDexCortCtrl,
   facet_var = "treatment",
-  cluster_var = "seurat_clusters_res0.04",
-  plot_title = "UMAP Projection by Treatment, res=0.04",
-  facet_order = c("CTRL", "DEX", "CORT"),
+  cluster_var = "seurat_clusters_res0.5",
+  plot_title = "UMAP Projection by Treatment, res=0.5",
+  # facet_order = c("CTRL", "DEX", "CORT"),
   label_clusters = TRUE,               # czy pokazywać etykiety klastrów
   text_size_axis_title = 14,           # rozmiar tytułów osi
   text_size_axis_text = 10,             # rozmiar tekstu na osiach (tick labels)

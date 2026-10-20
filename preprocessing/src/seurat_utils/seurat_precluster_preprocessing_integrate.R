@@ -347,7 +347,7 @@ seuratV5_precluster_preprocessing_integrate <- function(
     ax <- x[[assay]]
     if (inherits(ax, "Assay5")) {
       ln <- SeuratObject::Layers(ax)   # <-- tu jest zmiana
-      if (length(ln) > 1) x <- Seurat::JoinLayers(x, assay = assay)
+      if (length(ln) > 1) x <-  SeuratObject::JoinLayers(x, assay = assay)
     }
     x
   })

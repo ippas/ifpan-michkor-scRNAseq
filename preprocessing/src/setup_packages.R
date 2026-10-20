@@ -25,6 +25,22 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocMana
 if (!requireNamespace("SingleR", quietly = TRUE)) BiocManager::install("SingleR")
 if (!requireNamespace("celldex", quietly = TRUE)) BiocManager::install("celldex")
 if (!requireNamespace("TENxPBMCData", quietly = TRUE)) BiocManager::install("TENxPBMCData")
+if (!requireNamespace("preprocessCore", quietly = TRUE)) BiocManager::install("preprocessCore")
+if (!requireNamespace("ComplexHeatmap", quietly = TRUE)) {BiocManager::install("ComplexHeatmap")}
+
+if (!requireNamespace("devtools", quietly = TRUE))
+  install.packages("devtools")
+
+
+# github functions
+if (!requireNamespace("devtools", quietly = TRUE))
+  install.packages("devtools")
+
+devtools::source_url("https://raw.githubusercontent.com/mateuszzieba/ifpan-matzieb-geneTranslator/master/preprocessing/R/src/simple_biomart_tools.r")
+
+
+source("https://raw.githubusercontent.com/IanevskiAleksandr/sc-type/master/R/gene_sets_prepare.R")
+source("https://raw.githubusercontent.com/IanevskiAleksandr/sc-type/master/R/sctype_score_.R")
 
 
 # Load required libraries
@@ -70,13 +86,31 @@ lapply(list.files("preprocessing/src/singler_annotation_utils/", "\\.R$", full.n
 
 lapply(list.files("preprocessing/src/visualization_utils/barplot/", "\\.R$", full.names = TRUE), source)
 
+lapply(list.files("preprocessing/src/visualization_utils/heatmap/", "\\.R$", full.names = TRUE), source)
+
+# lapply(list.files("preprocessing/src/visualization_utils/dotplot/", "\\.R$", full.names = TRUE), source)
+# 
+# lapply(list.files("preprocessing/src/statistics_utils/", "\\.R$", full.names = TRUE), source)
+
+lapply(list.files("preprocessing/src/data_summary_utils/", "\\.R$", full.names = TRUE), source)
 
 # ##############################################################################
 # ---- load Rdata ----
 # ##############################################################################
 # load("data/pilotDexCortCtrl/r_outputs/merged_pilotDexCortCtrl.RData")
 
-load("data/pilotDexCortCtrl/r_outputs/integrated_pilotDexCortCtrl.RData")
+# load("data/pilotDexCortCtrl/r_outputs/integrated_pilotDexCortCtrl.RData")
+
+load("data/pilotDexCortCtrl/r_outputs/integrated_pilotDexCortCtrl_11.09.2025_v3.RData")
+
+load("data/pilotDexCortCtrl/r_outputs/integrated_pilotDexCortCtrl_filtered_14.09.2025_v2.RData")
+
+# load("data/pilotDexCortCtrl/r_outputs/integrated_pilotDexCortCtrl_filtered_12.09.2025_v1.RData")
+
 
 # load("data/pilotDexCortCtrl/r_outputs/integrated_pilotDexCortCtrl_backupFirstIntegration.RData")
 
+
+# integrated_pilotDexCortCtrl <- JoinLayers(integrated_pilotDexCortCtrl, assay = "RNA")
+# 
+# Layers(integrated_pilotDexCortCtrl[["RNA"]])
